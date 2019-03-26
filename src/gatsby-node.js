@@ -4,38 +4,30 @@ const queryString = require("query-string");
 
 exports.sourceNodes = async ({ actions }, { username }) => {
   if (!username) {
-    throw new Error(
-      "You must provide a `username` to `gatsby-source-dev`."
-    );
+    throw new Error("You must provide a `username` to `gatsby-source-dev`.");
   }
 
   const { createNode } = actions;
 
   const articles = [];
-  let numResults = null;
-  let page = 1;
 
-  do {
-    const params = queryString.stringify({
-      username,
-      page: 1
-    });
+  const params = queryString.stringify({
+    username
+  });
 
-    // eslint-disable-next-line no-await-in-loop
-    const res = await fetch(
-      `https://dev.to/api/articles?${params}`
+  // eslint-disable-next-line no-await-in-loop
+  const res = await fetch(`https://dev.to/api/articles?${params}`);
+
+  // eslint-disable-next-line no-await-in-loop
+  const data = await res.json();
+
+  for (const article of data) {
+    const articleResult = await fetch(
+      `https://dev.to/api/articles/${article.id}`
     );
-
-    // eslint-disable-next-line no-await-in-loop
-    const data = await res.json();
-
-    numResults = data.length;
-    page += 1;
-
-    data.forEach(d => {
-      articles.push(d);
-    });
-  } while (numResults > 0);
+    const articleData = await articleResult.json();
+    articles.push({ ...article, ...articleData });
+  }
 
   articles.forEach(article => {
     const jsonString = JSON.stringify(article);

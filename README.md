@@ -2,7 +2,7 @@
 
 [![NPM version](https://badgen.net/npm/v/gatsby-source-dev)](https://www.npmjs.com/package/gatsby-source-dev) [![Build status](https://badgen.net/travis/geocine/gatsby-source-dev)](https://travis-ci.com/danoc/gatsby-source-dev)
 
-A Gatsby plugin that fetches user articles from Dev.to’s `/articles?username` endpoint.
+A Gatsby plugin that fetches user articles from Dev.to’s `/articles?username` combined with `/articles/${id}` endpoint.
 
 ## Usage
 
