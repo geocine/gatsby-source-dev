@@ -21,10 +21,13 @@ exports.sourceNodes = async ({ actions }, { username }) => {
   // eslint-disable-next-line no-await-in-loop
   const data = await res.json();
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const article of data) {
+    // eslint-disable-next-line no-await-in-loop
     const articleResult = await fetch(
       `https://dev.to/api/articles/${article.id}`
     );
+    // eslint-disable-next-line no-await-in-loop
     const articleData = await articleResult.json();
     articles.push({ ...article, ...articleData });
   }
