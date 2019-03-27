@@ -6,6 +6,7 @@
     "gatsby-node.js",
     "gatsby-node.js.map"
   ],
+  "main": "gatsby-node.js",
   "scripts": {
     "test": "yarn test:eslint && yarn test:prettier",
     "test:eslint": "eslint . --ignore-path .gitignore --ext .jsx --ext .js",
