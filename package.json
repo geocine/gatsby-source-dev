@@ -1,6 +1,6 @@
 {
   "name": "gatsby-source-dev",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Gatsby plugin that fetches user articles from Dev.to",
   "files": [
     "gatsby-node.js",
