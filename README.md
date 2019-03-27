@@ -1,6 +1,6 @@
 # gatsby-source-dev
 
-[![NPM version](https://badgen.net/npm/v/gatsby-source-dev)](https://www.npmjs.com/package/gatsby-source-dev) [![Build status](https://badgen.net/travis/geocine/gatsby-source-dev)](https://travis-ci.com/danoc/gatsby-source-dev)
+[![NPM version](https://badgen.net/npm/v/gatsby-source-dev)](https://www.npmjs.com/package/gatsby-source-dev) [![Build status](https://badgen.net/travis/geocine/gatsby-source-dev)](https://travis-ci.com/geocine/gatsby-source-dev)
 
 A Gatsby plugin that fetches user articles from Dev.to’s `/articles?username` combined with `/articles/${id}` endpoint.
 
@@ -44,3 +44,5 @@ The plugin will store the Dev.to API response in Gatsby. Here's an example of a 
 ```
 
 The node contains the entire response from Dev.to’s endpoint.
+
+> Pagination is not yet implemented
