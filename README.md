@@ -33,9 +33,9 @@ The plugin will store the Dev.to API response in Gatsby. Here's an example of a 
     edges {
       node {
         article {
-          name
           id
-          distance
+          title
+          description
         }
       }
     }
