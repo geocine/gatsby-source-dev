@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+const axios = require("axios");
 const crypto = require("crypto");
 const queryString = require("query-string");
 
@@ -16,19 +16,19 @@ exports.sourceNodes = async ({ actions }, { username }) => {
   });
 
   // eslint-disable-next-line no-await-in-loop
-  const res = await fetch(`https://dev.to/api/articles?${params}`);
+  const res = await axios.get(`https://dev.to/api/articles?${params}`);
 
   // eslint-disable-next-line no-await-in-loop
-  const data = await res.json();
+  const { data } = res;
 
   // eslint-disable-next-line no-restricted-syntax
   for (const article of data) {
     // eslint-disable-next-line no-await-in-loop
-    const articleResult = await fetch(
+    const articleResult = await axios(
       `https://dev.to/api/articles/${article.id}`
     );
     // eslint-disable-next-line no-await-in-loop
-    const articleData = await articleResult.json();
+    const articleData = await articleResult.data;
     articles.push({ ...article, ...articleData });
   }
 

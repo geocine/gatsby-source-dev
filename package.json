@@ -19,7 +19,7 @@
   "author": "Aivan Monceller",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^2.2.0",
+    "axios": "^0.18.0",
     "query-string": "^6.1.0"
   },
   "devDependencies": {
