@@ -1,4 +1,9 @@
-# gatsby-source-dev
+<h1 align="center">
+  <a href="https://github.com/geocine/gatsby-source-dev#readme"><img src="https://i.imgur.com/VEldYDo.png" alt="header" width="800"/></a>
+  <br>
+  gatsby-source-dev
+  <br>
+</h1>
 
 [![NPM version](https://badgen.net/npm/v/gatsby-source-dev)](https://www.npmjs.com/package/gatsby-source-dev) [![Build Status](https://travis-ci.org/geocine/gatsby-source-dev.svg?branch=master)](https://travis-ci.org/geocine/gatsby-source-dev)
 
